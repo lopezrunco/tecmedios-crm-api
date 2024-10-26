@@ -13,7 +13,11 @@ import { loggingMiddleware } from "./middlewares/loggingMiddleware";
 const app: Express = express();
 
 app.use(cors({
-  origin: 'https://tecmedios.com',
+  origin: [
+    'https://tecmedios.com',
+    'http://tecmedios.com/test',
+    'http://localhost:8000',    // For local testing.
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));

@@ -14,7 +14,11 @@ const routes_1 = require("./routes");
 const loggingMiddleware_1 = require("./middlewares/loggingMiddleware");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: 'https://tecmedios.com',
+    origin: [
+        'https://tecmedios.com',
+        'http://tecmedios.com/test',
+        'http://localhost:8000', // For local testing.
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
